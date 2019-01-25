@@ -22,6 +22,9 @@ Importing a component would then look like:
 const ComponentA from './src/components/ComponentA';
 ```
 
+## Code styling
+This project uses ESLint to ensure code style consistency and is based off the [airbnb-config](https://github.com/airbnb/javascript/tree/master/react).
+
 ## Run the project
 To run the project (assuming Node is installed), run:
 ```
