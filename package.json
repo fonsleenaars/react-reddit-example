@@ -14,7 +14,7 @@
     "reactjs",
     "reddit"
   ],
-  "author": "Fons Leenaars",
+  "author": "Fons Leenaars <fonsleenaars@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fonsleenaars/react-reddit-example/issues"
