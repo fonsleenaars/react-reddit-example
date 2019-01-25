@@ -2,11 +2,10 @@
   "name": "react-reddit-example",
   "version": "0.0.1",
   "description": "Simple example of a React/Reddit implementation (front-page only)",
-  "main": "index.js",
   "scripts": {
     "eslint": "eslint --color --ext js,jsx src",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,10 +27,13 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.0.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-react-class-to-function": "^1.2.0",
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.8.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-babel": "^5.3.0",
@@ -40,6 +42,7 @@
     "eslint-plugin-react": "^7.11.0",
     "html-webpack-plugin": "^3.2.0",
     "incstr": "^1.2.3",
+    "jest": "^24.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "path": "^0.12.7",
     "postcss": "^7.0.14",

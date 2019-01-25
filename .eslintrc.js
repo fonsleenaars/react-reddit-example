@@ -8,6 +8,15 @@ module.exports = {
   env: {
     browser: true,
   },
+  overrides: [
+    {
+      files: ['*.spec.js'],
+      rules: {
+        'no-undef': 0,
+        'react/jsx-filename-extension': 0,
+      },
+    },
+  ],
   rules: {
     // Disable the dependency check because we're using Webpack, all dependencies are dev
     'import/no-extraneous-dependencies': 0,
