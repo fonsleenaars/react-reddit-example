@@ -37,3 +37,5 @@ To run the unit tests, run:
 ```
 npm test
 ```
+
+Component tests are included in the component folder following the `Component.spec.js` standard.
