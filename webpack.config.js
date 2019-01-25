@@ -99,6 +99,13 @@ module.exports = (env, { mode }) => {
           test: /\.(eot|ttf|woff2?)(\?.*)?$/,
           loader: 'file-loader',
         },
+        {
+          test: /\.(gif|jpe?g|png|svg)(\?.*)?$/,
+          use: [
+            'file-loader',
+            'image-webpack-loader',
+          ],
+        },
       ],
     },
     plugins: [
