@@ -13,12 +13,12 @@ A consistent component setup is used to allow for an easy and structured overvie
 ```
 
 Assuming a simple presentational component, the container file would simply hold:
-```
+```js
 export { default } from './ComponentA';
 ```
 
 Importing a component would then look like:
-```
+```js
 const ComponentA from './src/components/ComponentA';
 ```
 
