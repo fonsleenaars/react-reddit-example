@@ -11,17 +11,17 @@ module.exports = (env, { mode }) => {
   const cssContexts = {};
 
   /**
-   * Create a local identity for a css className.
-   *
-   * This method is used to allow for easy CSS module usage in development
-   * while using a full hash system in production. Essentially this means that
-   * CSS classnames in development will retain their defined classname as a
-   * prefix and attach a simple unique suffix (ex .app => .app_xU)
-   *
-   * @param {*} context
-   * @param {*} localIdentName
-   * @param {*} localName
-   */
+  * Create a local identity for a css className.
+  *
+  * This method is used to allow for easy CSS module usage in development
+  * while using a full hash system in production. Essentially this means that
+  * CSS classnames in development will retain their defined classname as a
+  * prefix and attach a simple unique suffix (ex .app => .app_xU)
+  *
+  * @param {*} context
+  * @param {*} localIdentName
+  * @param {*} localName
+  */
   function getLocalIdent(context, localIdentName, localName) {
     const { resourcePath } = context;
 
@@ -83,23 +83,25 @@ module.exports = (env, { mode }) => {
           test: /\.css$/,
           use: [
             mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-              {
-                loader: 'css-loader',
-                options: {
-                  ident: 'css',
-                  importLoaders: 1,
-                  sourceMap: true,
-                  modules: true,
-                  camelCase: true,
-                  getLocalIdent,
-                },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                sourceMap: true,
+                modules: true,
+                camelCase: true,
+                getLocalIdent,
               },
-              'postcss-loader',
+            },
           ],
         },
       ],
     },
     plugins: [
+      new MiniCssExtractPlugin({
+        filename: '[hash].css',
+        chunkFilename: '[id].css',
+      }),
       new HtmlWebpackPlugin({
         template: path.resolve('src/index.html'),
         minify: {
