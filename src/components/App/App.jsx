@@ -1,3 +1,4 @@
+import 'typeface-dosis';
 import React from 'react';
 
 import Reddit from '../Reddit';
