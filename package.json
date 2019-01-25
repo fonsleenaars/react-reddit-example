@@ -1,0 +1,27 @@
+{
+  "name": "react-reddit-example",
+  "version": "0.0.1",
+  "description": "Simple example of a React/Reddit implementation (front-page only)",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fonsleenaars/react-reddit-example.git"
+  },
+  "keywords": [
+    "reactjs",
+    "reddit"
+  ],
+  "author": "Fons Leenaars",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fonsleenaars/react-reddit-example/issues"
+  },
+  "homepage": "https://github.com/fonsleenaars/react-reddit-example#readme",
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
