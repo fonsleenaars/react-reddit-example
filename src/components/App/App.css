@@ -1,16 +1,27 @@
 :global(body) {
+  background-color: #edf2f5;
+  /* Standardize font-size to 16 for rems */
+  font-size: 16px;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  font-size: 16px;
+  /* Totally not the ImageQuix font */
+  font-family: 'Dosis', sans-serif;
 }
 
 .header {
-  background-color: #01a6dc; /* Totally not the ImageQuix front page blue */
+  /* Totally not the ImageQuix front page blue */
+  background-color: #01a6dc;
   color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
   height: 80px;
   line-height: 80px;
   padding: 0 15px;
+}
+
+.content {
+  padding: 15px;
 }

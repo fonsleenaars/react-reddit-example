@@ -12,7 +12,9 @@ export default class App extends React.Component {
         <div className={styles.header}>
           Reddit/React example
         </div>
-        <Reddit />
+        <div className={styles.content}>
+          <Reddit />
+        </div>
       </div>
     );
   }

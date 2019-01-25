@@ -2,35 +2,40 @@ import 'whatwg-fetch';
 import React from 'react';
 
 import Loader from '../Loader';
+import Posts from '../Posts';
 
 
 export default class Reddit extends React.Component {
   state = {
     loading: true,
     posts: [],
+    subreddit: 'pics',
   };
 
   componentDidMount() {
-    window.fetch('https://www.reddit.com/r/pics.json')
+    const {
+      subreddit,
+    } = this.state;
+
+    window.fetch(`https://www.reddit.com/r/${subreddit}.json`)
       .then(response => response.json())
       .then((json) => {
         this.setState({
           loading: false,
           posts: json.data.children,
         });
-      }).catch((error) => {
+      }).catch(() => {
         this.setState({
           loading: false,
-          error,
         });
       });
   }
 
   render() {
     const {
-      error,
       loading,
       posts,
+      subreddit,
     } = this.state;
 
     if (loading) {
@@ -40,13 +45,13 @@ export default class Reddit extends React.Component {
     }
 
     return (
-      error || (
-        <div>
-          There are
-          {` ${posts.length} `}
-          posts from reddit.
-        </div>
-      )
+      <div>
+        <h3>
+          Showing posts from /r/
+          {subreddit}
+        </h3>
+        <Posts posts={posts} />
+      </div>
     );
   }
 }
