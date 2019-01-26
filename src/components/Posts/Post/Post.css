@@ -13,3 +13,21 @@
 .post-details {
   flex: 1 0 0;
 }
+
+.title {
+  display: block;
+}
+
+.hide {
+  background: none;
+  border: none;
+  color: blue;
+  display: block;
+  font-size: 0.8rem;
+  padding: 6px 0 0;
+  text-decoration:underline;
+}
+
+.hide:hover {
+  cursor: pointer;
+}

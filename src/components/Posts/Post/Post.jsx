@@ -48,6 +48,7 @@ export default class Post extends React.Component {
             {title}
           </span>
           <button
+            className={styles.hide}
             onClick={this.hide}
             type="button"
           >
