@@ -1,0 +1,172 @@
+/* dosis-200normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Dosis Extra Light '),
+    local('Dosis-Extra Light'),
+    url(/dd7aa2d788a5adf09471d8647ef777bd.woff2) format('woff2'), 
+    url(/9710539b21cf7b7aae6f0375c093bbb0.woff) format('woff'); /* Modern Browsers */
+}
+
+/* dosis-300normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Dosis Light '),
+    local('Dosis-Light'),
+    url(/cbdc50e8c7b204415c1deb0a841b7e0f.woff2) format('woff2'), 
+    url(/6bbdef27087f3d812c021fd6164bbc9d.woff) format('woff'); /* Modern Browsers */
+}
+
+/* dosis-400normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Dosis Regular '),
+    local('Dosis-Regular'),
+    url(/61c2a307f2216f5e25903ab354c59321.woff2) format('woff2'), 
+    url(/28ab1d890ecf5417b14a3da15a99e273.woff) format('woff'); /* Modern Browsers */
+}
+
+/* dosis-500normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Dosis Medium '),
+    local('Dosis-Medium'),
+    url(/dcc79a0d7d3563668ed19aec9eca0540.woff2) format('woff2'), 
+    url(/98caaa4f834d44e46a9c7b23ea9c7258.woff) format('woff'); /* Modern Browsers */
+}
+
+/* dosis-600normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Dosis SemiBold '),
+    local('Dosis-SemiBold'),
+    url(/a001afd6b7ab0fd3d637e6dfe3fead5b.woff2) format('woff2'), 
+    url(/42bef05df1d049d92340c06322add11a.woff) format('woff'); /* Modern Browsers */
+}
+
+/* dosis-700normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Dosis Bold '),
+    local('Dosis-Bold'),
+    url(/9cd8da350d6e4d79d21f81316438559d.woff2) format('woff2'), 
+    url(/48f0bc23996f83809d4e24c773e4e4b7.woff) format('woff'); /* Modern Browsers */
+}
+
+/* dosis-800normal - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Dosis ExtraBold '),
+    local('Dosis-ExtraBold'),
+    url(/bcc121076c537fcd7a46dd58a9ab924e.woff2) format('woff2'), 
+    url(/7df28938e86348032710c2a59631ae37.woff) format('woff'); /* Modern Browsers */
+}
+
+
+.D svg {
+  display: inline-block;
+  padding-right: 12px;
+  vertical-align: middle;
+}
+
+.F {
+  padding: 8px 0;
+  display: flex;
+}
+
+.G {
+  border: none;
+  display: block;
+  margin-right: 12px;
+  text-decoration: none;
+}
+
+.H {
+  align-self: center;
+  max-width: 70px;
+  vertical-align: middle;
+}
+
+.I {
+  flex: 1 0 0;
+}
+
+.J {
+  display: block;
+}
+
+.K {
+  background: none;
+  border: none;
+  color: blue;
+  display: block;
+  font-size: 0.8rem;
+  padding: 6px 0 0;
+  text-decoration:underline;
+}
+
+.K:hover {
+  cursor: pointer;
+}
+
+.E {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #edf2f5;
+  /* Standardize font-size to 16 for rems */
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.A {
+  /* Totally not the ImageQuix font */
+  font-family: 'Dosis', sans-serif;
+}
+
+.B {
+  /* Totally not the ImageQuix front page blue */
+  background-color: #01a6dc;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 15px;
+}
+
+.C {
+  padding: 15px;
+}
+
