@@ -10,15 +10,36 @@ export default class Posts extends React.Component {
     posts: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   }
 
-  render() {
+  state = (() => {
     const {
       posts,
     } = this.props;
 
+    // Initialize from props, will be changed later
+    return {
+      posts,
+    };
+  })();
+
+  hide = (id) => {
+    this.setState(prevState => ({
+      posts: prevState.posts.filter(post => post.data.id !== id),
+    }));
+  }
+
+  render() {
+    const {
+      posts,
+    } = this.state;
+
     return (
       <ul className={styles.list}>
         {posts.map(post => (
-          <Post key={post.data.id} post={post.data} />
+          <Post
+            key={post.data.id}
+            hide={this.hide}
+            post={post.data}
+          />
         ))}
       </ul>
     );
