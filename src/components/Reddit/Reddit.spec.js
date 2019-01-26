@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import redditData from '../../../__mocks__/redditData';
 import Reddit from '.';
 
 
@@ -33,12 +34,7 @@ describe('Reddit', () => {
   it('fetch data from anothers subreddit', (done) => {
     const mockSuccessResponse = {
       data: {
-        children: [{
-          title: 'A very important post',
-          thumbnail: 'link-to-an-actual-image.image-extension',
-          thumbnail_height: 123,
-          thumbnail_width: 345,
-        }],
+        children: redditData,
       },
     };
     const mockJsonPromise = Promise.resolve(mockSuccessResponse);
@@ -58,10 +54,29 @@ describe('Reddit', () => {
       expect(wrapper.state()).toEqual({
         loading: false,
         posts: [{
-          title: 'A very important post',
-          thumbnail: 'link-to-an-actual-image.image-extension',
-          thumbnail_height: 123,
-          thumbnail_width: 345,
+          data: {
+            id: 'a1',
+            title: 'Calvin & Hobbes strike again',
+            thumbnail: 'calvin-hobbes-bees-nest.jpg',
+            thumbnail_height: 120,
+            thumbnail_width: 80,
+          },
+        }, {
+          data: {
+            id: 'a2',
+            title: 'Calvin & Hobbes strike again',
+            thumbnail: 'calvin-hobbes-bees-nest.jpg',
+            thumbnail_height: 120,
+            thumbnail_width: 80,
+          },
+        }, {
+          data: {
+            id: 'a3',
+            title: 'This post has a missing thumbnail',
+            thumbnail: 'self',
+            thumbnail_height: null,
+            thumbnail_width: null,
+          },
         }],
         subreddit: 'news',
       });
