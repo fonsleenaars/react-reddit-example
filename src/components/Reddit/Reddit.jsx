@@ -17,6 +17,10 @@ export default class Reddit extends React.Component {
       subreddit,
     } = this.state;
 
+    this.fetchSubreddit(subreddit);
+  }
+
+  fetchSubreddit = (subreddit) => {
     window.fetch(`https://www.reddit.com/r/${subreddit}.json`)
       .then(response => response.json())
       .then((json) => {
@@ -29,6 +33,14 @@ export default class Reddit extends React.Component {
           loading: false,
         });
       });
+  }
+
+  setSubreddit = (subreddit) => {
+    this.setState({
+      subreddit,
+    });
+
+    this.fetchSubreddit(subreddit);
   }
 
   render() {
