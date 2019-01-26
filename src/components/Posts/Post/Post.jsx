@@ -12,6 +12,7 @@ export default class Post extends React.Component {
       thumbnail: PropTypes.string,
       thumbnail_height: PropTypes.number,
       title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
     }).isRequired,
   }
 
@@ -28,9 +29,11 @@ export default class Post extends React.Component {
   render() {
     const {
       post: {
+        id,
         thumbnail,
         thumbnail_height: thumbnailHeight,
         title,
+        url,
       },
     } = this.props;
 
@@ -38,11 +41,13 @@ export default class Post extends React.Component {
 
     return (
       <li className={styles.item}>
-        <img
-          alt={`Thumbnail ${title}`}
-          className={styles.thumbnail}
-          src={thumbnailSrc}
-        />
+        <a className={styles.url} href={url}>
+          <img
+            alt={`Thumbnail ${id}`}
+            className={styles.thumbnail}
+            src={thumbnailSrc}
+          />
+        </a>
         <div className={styles.postDetails}>
           <span className={styles.title}>
             {title}
