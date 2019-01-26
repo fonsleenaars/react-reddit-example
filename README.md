@@ -5,7 +5,7 @@ This simple example of a Reddit implementation with ReactJS loads the data from 
 This project uses a Webpack 4 setup with Babel to transpile the ES6 components into ES5 and then run them on the webpack-dev-server during development, and compile them into a production package on build that could be deployed on any simple webserver.
 
 A consistent component setup is used to allow for an easy and structured overview:
-```
+```js
 ./src/components/ComponentA                   // The component folder, always capitalized
 ./src/components/ComponentA/index.jsx         // The container file
 ./src/components/ComponentA/ComponentA.jsx    // The component file
@@ -19,7 +19,7 @@ export { default } from './ComponentA';
 
 Importing a component would then look like:
 ```js
-const ComponentA from './src/components/ComponentA';
+import ComponentA from './src/components/ComponentA';
 ```
 
 ## Code styling
