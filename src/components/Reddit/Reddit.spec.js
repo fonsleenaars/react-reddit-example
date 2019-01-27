@@ -8,31 +8,6 @@ import Reddit from '.';
 
 describe('Reddit', () => {
   it('fetch data from reddit, default is /r/pics', (done) => {
-    const mockSuccessResponse = {};
-    const mockJsonPromise = Promise.resolve(mockSuccessResponse);
-    const mockFetchPromise = Promise.resolve({
-      json: () => mockJsonPromise,
-    });
-    jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
-
-    const wrapper = shallow(<Reddit />);
-
-    expect(global.fetch).toHaveBeenCalledTimes(1);
-    expect(global.fetch).toHaveBeenCalledWith('https://www.reddit.com/r/pics.json');
-
-    process.nextTick(() => {
-      expect(wrapper.state()).toEqual({
-        loading: false,
-        posts: [],
-        subreddit: 'pics',
-      });
-
-      global.fetch.mockClear();
-      done();
-    });
-  });
-
-  it('fetch data from anothers subreddit', (done) => {
     const mockSuccessResponse = {
       data: {
         children: redditData,
@@ -45,11 +20,9 @@ describe('Reddit', () => {
     jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
 
     const wrapper = shallow(<Reddit />);
-    global.fetch.mockClear();
-    wrapper.instance().setSubreddit('news');
 
     expect(global.fetch).toHaveBeenCalledTimes(1);
-    expect(global.fetch).toHaveBeenCalledWith('https://www.reddit.com/r/news.json');
+    expect(global.fetch).toHaveBeenCalledWith('https://www.reddit.com/r/pics.json');
 
     process.nextTick(() => {
       expect(wrapper.state()).toEqual({
@@ -82,10 +55,40 @@ describe('Reddit', () => {
             url: 'url-to-a-subreddit-post',
           },
         }],
-        subreddit: 'news',
+        subreddit: 'pics',
       });
 
       global.fetch.mockClear();
+      done();
+    });
+  });
+
+  it('fetch data from another subreddit', (done) => {
+    const mockSuccessResponse = {};
+    const mockJsonPromise = Promise.resolve(mockSuccessResponse);
+    const mockFetchPromise = Promise.resolve({
+      json: () => mockJsonPromise,
+    });
+    jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
+
+    const wrapper = shallow(<Reddit />);
+    global.fetch.mockClear();
+
+    process.nextTick(() => {
+      // Set the subreddit input:
+      const input = wrapper.find('input');
+      input.simulate('change', { target: { value: 'news' } });
+      input.simulate('keyPress', {
+        key: 'Enter',
+      });
+
+      process.nextTick(() => {
+        expect(global.fetch).toHaveBeenCalledTimes(1);
+        expect(global.fetch).toHaveBeenCalledWith('https://www.reddit.com/r/news.json');
+
+        global.fetch.mockClear();
+        done();
+      });
       done();
     });
   });
