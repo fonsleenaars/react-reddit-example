@@ -3,6 +3,7 @@ import React from 'react';
 
 import Loader from '../Loader';
 import Posts from '../Posts';
+import styles from './Reddit.css';
 
 
 export default class Reddit extends React.Component {
@@ -29,6 +30,10 @@ export default class Reddit extends React.Component {
   // This would normally be an arrow function/class property but Jest
   // can't mock them at the moment. Regular class method it is.
   fetchSubreddit(subreddit) {
+    this.setState({
+      loading: true,
+    });
+
     window.fetch(`https://www.reddit.com/r/${subreddit}.json`)
       .then(response => response.json())
       .then((json) => {
@@ -43,12 +48,20 @@ export default class Reddit extends React.Component {
       });
   }
 
-  setSubreddit = (subreddit) => {
-    this.setState({
-      subreddit,
-    });
+  checkSubmit = (e) => {
+    if (e.key === 'Enter') {
+      const {
+        subreddit,
+      } = this.state;
 
-    this.fetchSubreddit(subreddit);
+      this.fetchSubreddit(subreddit);
+    }
+  }
+
+  setSubreddit = (e) => {
+    this.setState({
+      subreddit: e.target.value,
+    });
   }
 
   render() {
@@ -68,7 +81,13 @@ export default class Reddit extends React.Component {
       <div>
         <h3>
           Showing posts from /r/
-          {subreddit}
+          <input
+            className={styles.subredditInput}
+            type="text"
+            value={subreddit}
+            onChange={this.setSubreddit}
+            onKeyPress={this.checkSubmit}
+          />
         </h3>
         <Posts posts={posts} />
       </div>
