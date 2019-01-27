@@ -19,7 +19,12 @@ describe('Post component', () => {
   });
 
   it('Show a post without a thumbnail', () => {
-    const wrapper = shallow(<Post post={redditData[2].data} />);
+    const wrapper = shallow(
+      <Post
+        post={redditData[2].data}
+        hide={() => {}}
+      />,
+    );
 
     // Verify that the image is our placeholder (link.png in /src/images)
     expect(wrapper.find('img').prop('src')).toBe('link.png');
