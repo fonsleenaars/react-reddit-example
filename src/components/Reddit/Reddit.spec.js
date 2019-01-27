@@ -97,5 +97,6 @@ describe('Reddit', () => {
 
     expect(mock).toHaveBeenCalledTimes(1);
     expect(wrapper.find(Loader)).toHaveLength(1);
+    expect(wrapper.find(Loader).dive().find('div').text()).toEqual('Loading…');
   });
 });
