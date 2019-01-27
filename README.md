@@ -1,7 +1,7 @@
 # react-reddit-example
 [![Build Status](https://travis-ci.org/fonsleenaars/react-reddit-example.svg?branch=master)](https://travis-ci.org/fonsleenaars/react-reddit-example) [![Coverage Status](https://coveralls.io/repos/github/fonsleenaars/react-reddit-example/badge.svg?branch=master)](https://coveralls.io/github/fonsleenaars/react-reddit-example?branch=master)
 
-This simple example of a Reddit implementation with ReactJS loads the data from [https://www.reddit.com/r/pics.json](https://www.reddit.com/r/pics.json) and shows them as a list of articles. Articles can be hidden.
+This simple example of a Reddit implementation with ReactJS loads the data from [https://www.reddit.com](https://www.reddit.com) and shows it as a list of articles. Articles can be hidden. Check out a live preview here [https://fonsleenaars.github.io/react-reddit-example/](https://fonsleenaars.github.io/react-reddit-example/)
 
 ## Project setup
 This project uses a Webpack 4 setup with Babel to transpile the ES6 components into ES5 and then run them on the webpack-dev-server during development, and compile them into a production package on build that could be deployed on any simple webserver.
