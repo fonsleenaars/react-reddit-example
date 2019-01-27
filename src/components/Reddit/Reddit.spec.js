@@ -79,16 +79,20 @@ describe('Reddit', () => {
       const input = wrapper.find('input');
       input.simulate('change', { target: { value: 'news' } });
       input.simulate('keyPress', {
+        key: 'X',
+      });
+
+      // Verify a non-Enter key press doesn't work:
+      expect(global.fetch).toHaveBeenCalledTimes(0);
+
+      // Now trigger:
+      input.simulate('keyPress', {
         key: 'Enter',
       });
 
-      process.nextTick(() => {
-        expect(global.fetch).toHaveBeenCalledTimes(1);
-        expect(global.fetch).toHaveBeenCalledWith('https://www.reddit.com/r/news.json');
+      expect(global.fetch).toHaveBeenCalledTimes(1);
+      expect(global.fetch).toHaveBeenCalledWith('https://www.reddit.com/r/news.json');
 
-        global.fetch.mockClear();
-        done();
-      });
       done();
     });
   });
