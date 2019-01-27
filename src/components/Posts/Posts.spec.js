@@ -13,4 +13,16 @@ describe('Posts component', () => {
     // There should be three posts (see <Root>/__mocks__/redditData.js)
     expect(wrapper.find(Post)).toHaveLength(3);
   });
+
+  it('Hide a post from a list of three', () => {
+    const wrapper = shallow(<Posts posts={redditData} />);
+    wrapper
+      .find(Post)
+      .first()
+      .dive()
+      .instance()
+      .hide();
+
+    expect(wrapper.find(Post)).toHaveLength(2);
+  });
 });

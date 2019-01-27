@@ -7,7 +7,12 @@ import Post from '.';
 
 describe('Post component', () => {
   it('Show a post with a thumbnail', () => {
-    const wrapper = shallow(<Post post={redditData[0].data} />);
+    const wrapper = shallow(
+      <Post
+        post={redditData[0].data}
+        hide={() => {}}
+      />,
+    );
 
     expect(wrapper.find('img').prop('src')).toBe('calvin-hobbes-bees-nest.jpg');
     expect(wrapper.find('span').text()).toBe('Calvin & Hobbes strike again');
