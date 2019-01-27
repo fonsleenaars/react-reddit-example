@@ -1,4 +1,6 @@
 # react-reddit-example
+[![Build Status](https://travis-ci.org/fonsleenaars/react-reddit-example.svg?branch=master)](https://travis-ci.org/fonsleenaars/react-reddit-example)
+
 This simple example of a Reddit implementation with ReactJS loads the data from [https://www.reddit.com/r/pics.json](https://www.reddit.com/r/pics.json) and shows them as a list of articles. Articles can be hidden.
 
 ## Project setup
