@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import redditData from '../../../__mocks__/redditData';
+import Loader from '../Loader';
 import Reddit from '.';
 
 
@@ -87,5 +88,14 @@ describe('Reddit', () => {
       global.fetch.mockClear();
       done();
     });
+  });
+
+  it('test if the loader is showing while loading', () => {
+    const mock = jest.spyOn(Reddit.prototype, 'fetchSubreddit')
+      .mockImplementation(() => {});
+    const wrapper = shallow(<Reddit />);
+
+    expect(mock).toHaveBeenCalledTimes(1);
+    expect(wrapper.find(Loader)).toHaveLength(1);
   });
 });

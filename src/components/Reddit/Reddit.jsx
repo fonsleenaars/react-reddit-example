@@ -12,6 +12,12 @@ export default class Reddit extends React.Component {
     subreddit: 'pics',
   };
 
+  constructor(props) {
+    super(props);
+
+    this.fetchSubreddit = this.fetchSubreddit.bind(this);
+  }
+
   componentDidMount() {
     const {
       subreddit,
@@ -20,7 +26,9 @@ export default class Reddit extends React.Component {
     this.fetchSubreddit(subreddit);
   }
 
-  fetchSubreddit = (subreddit) => {
+  // This would normally be an arrow function/class property but Jest
+  // can't mock them at the moment. Regular class method it is.
+  fetchSubreddit(subreddit) {
     window.fetch(`https://www.reddit.com/r/${subreddit}.json`)
       .then(response => response.json())
       .then((json) => {
