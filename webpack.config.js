@@ -59,7 +59,7 @@ module.exports = (env, { mode }) => {
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: '[hash].js',
-      publicPath: '/',
+      publicPath: '/react-reddit-example/',
     },
     devServer: {
       contentBase: path.resolve(__dirname, './src'),
