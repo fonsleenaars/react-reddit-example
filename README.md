@@ -34,6 +34,8 @@ npm ci
 npm start
 ```
 
+The project is available at [localhost:8000/react-reddit-example](http://localhost:8000/react-reddit-example)
+
 ## Testing
 To run the unit tests, run:
 ```
