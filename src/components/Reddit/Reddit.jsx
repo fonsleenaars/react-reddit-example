@@ -60,7 +60,8 @@ export default class Reddit extends React.Component {
 
   setSubreddit = (e) => {
     this.setState({
-      subreddit: e.target.value,
+      // Make sure to strip all non alphanumeric chars:
+      subreddit: e.target.value.replace(/\W/g, ''),
     });
   }
 
